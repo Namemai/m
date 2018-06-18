@@ -380,7 +380,6 @@ def lineBot(op):
                         ret_ += "\n╠ Blokir : {}".format(str(len(blockedlist)))
                         ret_ += "\n╠══[ About Selfbot ]"
                         ret_ += "\n╠ Version : Premium"
-                        ret_ += "\n╠ Creator :
                         ret_ += "\n╰════════╬♥╬════════╯\n"
                         gye.sendMessage(to, str(ret_))
                     except Exception as e:
