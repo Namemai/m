@@ -851,6 +851,24 @@ def lineBot(op):
                             settings["mimic"]["status"] = False
                             gye.sendMessage(msg.to,"Reply Message off")
 #==============================================================================#
+                elif msg.text.lower().startswith("พูด "):
+                    sep = text.split(" ")
+                    say = text.replace(sep[0] + " ","")
+                    lang = 'th'
+                    tts = gTTS(text=say, lang=lang)
+                    tts.save("hasil.mp3")
+                    nadya.sendAudio(msg.to,"hasil.mp3")
+                elif msg.text.lower().startswith("เขียน "):
+                    sep = msg.text.split(" ")
+                    textnya = msg.text.replace(sep[0] + " ","")
+                    urlnya = "http://chart.apis.google.com/chart?chs=480x80&cht=p3&chtt=" + textnya + "&chts=FFFFFF,70&chf=bg,s,000000"
+                    nadya.sendImageWithURL(msg.to, urlnya)
+
+
+
+
+
+#==============================================================================#
                 elif text.lower() == 'คนสร้างห้อง':
                     group = gye.getGroup(to)
                     GS = group.creator.mid
