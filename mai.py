@@ -172,7 +172,7 @@ def helpmessage():
     return helpMessage
     
 def helptexttospeech():
-    helpTextToSpeech =   " Help2 " + "\n" + \                  
+    helpTextToSpeech =   " Help2 " + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
                   "║͜͡☆➣ Pro on/off" + "\n" + \
                   "║͜͡☆➣ Pt on/off" + "\n" + \
