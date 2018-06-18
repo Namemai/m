@@ -859,12 +859,12 @@ def lineBot(op):
                     lang = 'th'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    nadya.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                 elif msg.text.lower().startswith("เขียน "):
                     sep = msg.text.split(" ")
                     textnya = msg.text.replace(sep[0] + " ","")
                     urlnya = "http://chart.apis.google.com/chart?chs=480x80&cht=p3&chtt=" + textnya + "&chts=FFFFFF,70&chf=bg,s,000000"
-                    nadya.sendImageWithURL(msg.to, urlnya)
+                    gye.sendImageWithURL(msg.to, urlnya)
 
 
 
