@@ -192,6 +192,11 @@ def helpmessage():
                   "║͜͡☆➣ เรา " + "\n" + \
                   "║͜͡☆➣ รายชื่อคนในห้อง " + "\n" + \
                   "║͜͡☆➣ mai " + "\n" + \
+                  "║͜͡☆➣ เตะดึง @" + "\n" + \
+                  "║͜͡☆➣ เปิดแทคชื่อ" + "\n" + \
+                  "║͜͡☆➣ ปิดแทคชื่อ" + "\n" + \
+                  "║͜͡☆➣ เปิดแทคภาพ" + "\n" + \
+                  "║͜͡☆➣ ปิดแทคภาพ" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
                   "║͜͡☆➣ Maibotline " + "\n" + \
@@ -505,6 +510,19 @@ def lineBot(op):
                                 gye.sendMessage(msg.to,"Owner ☢-Bot-☢\nRemove\nExecuted")
                             except:
                                 pass
+#-------------------------------------------------------------------------------
+                elif text.lower() == 'เปิดแทคชื่อ':
+                    settings["detectMention"] = True
+                    gye.sendMessage(to, "เปิดระบบข้อความแทคแล้วครับเจ้านายʕ•ᴥ•ʔ")
+                elif text.lower() == 'ปิดแทคชื่อ':
+                    settings["detectMention"] = False
+                    gye.sendMessage(to, "ปิดระบบข้อความแทคแล้วครับเจ้านายʕ•ᴥ•ʔ")
+                elif text.lower() == 'เปิดแทคภาพ':
+                    settings["potoMention"] = True
+                    gye.sendMessage(msg.to,"เปิดแทคส่งรูปแล้วแล้วครับเจ้านายʕ•ᴥ•ʔ")
+                elif text.lower() == 'ปิดแทคภาพ':
+                    settings["potoMention"] = False
+                    gye.sendMessage(msg.to,"ปิดแทคส่งรูปแล้วครับเจ้านายʕ•ᴥ•ʔ")
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'pt on':
                         if settings["protect"] == True:
@@ -1009,8 +1027,8 @@ def lineBot(op):
                         ki2.sendMessage(msg.to,"➲ Done")
                         ki3.sendMessage(msg.to,"➲ Done")
                         ki4.sendMessage(msg.to,"➲ Done")
-			ki5.sendMessage(msg.to,"➲ Done")
-			ki6.sendMessage(msg.to,"➲ Done")
+                        ki5.sendMessage(msg.to,"➲ Done")
+                        ki6.sendMessage(msg.to,"➲ Done")
                         ki6.sendMessage(msg.to,"➲ ล้างหมดแล้วครับเจ้านาย")
                         
                 elif text.lower() == 'mai':
@@ -1019,8 +1037,8 @@ def lineBot(op):
                         ki2.sendMessage(msg.to,"➲ Mai 3 มาครับเจ้านาย")
                         ki3.sendMessage(msg.to,"➲ Mai 4 มาครับเจ้านาย")
                         ki4.sendMessage(msg.to,"➲ Mai 5 มาครับเจ้านาย")
-			ki5.sendMessage(msg.to,"➲ Mai 6 มาครับเจ้านาย")
-			ki6.sendMessage(msg.to,"➲ Mai 7 มาครับเจ้านาย")
+                        ki5.sendMessage(msg.to,"➲ Mai 6 มาครับเจ้านาย")
+                        ki6.sendMessage(msg.to,"➲ Mai 7 มาครับเจ้านาย")
                         ki6.sendMessage(msg.to,"➲ ครบครับเจ้านาย")
                         
                 elif text.lower() == 'แบน':
@@ -1055,6 +1073,27 @@ def lineBot(op):
                                random.choice(GUE).kickoutFromGroup(msg.to,[target])
                            except:
                                random.choice(GUE).sendText(msg.to,"Error")
+                elif "เตะดึง " in msg.text:
+                        vkick0 = msg.text.replace("เด้ง ","")
+                        vkick1 = vkick0.rstrip()
+                        vkick2 = vkick1.replace("@","")
+                        vkick3 = vkick2.rstrip()
+                        _name = vkick3
+                        gs = gye.getGroup(msg.to)
+                        targets = []
+                        for s in gs.members:
+                            if _name in s.displayName:
+                                targets.append(s.mid)
+                        if targets == []:
+                            pass
+                        else:
+                            for target in targets:
+                                try:
+                                    gye.kickoutFromGroup(msg.to,[target])
+                                    gye.findAndAddContactsByMid(target)
+                                    gye. inviteIntoGroup(msg.to,[target])
+                                except:
+                                    pass
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'ciak all member':
                  #   if msg._from in Owner:
@@ -1066,6 +1105,8 @@ def lineBot(op):
                             gs = ki2.getGroup(msg.to)
                             gs = ki3.getGroup(msg.to)
                             gs = ki4.getGroup(msg.to)
+                            gs = ki5.getGroup(msg.to)
+                            gs = ki6.getGroup(msg.to)
                            #gye.sendMessage(msg.to,"「 Bye All 」")
                            #gye.sendMessage(msg.to,"「 Sory guys 」")
                             targets = []
@@ -1080,7 +1121,7 @@ def lineBot(op):
                                         if not target in Owner:
                                             if not target in admin:
                                                 try:
-                                                    klist=[line,ais,ki2,ki3,ki4]
+                                                    klist=[line,ais,ki2,ki3,ki4,ki5,ki6]
                                                     kicker=random.choice(klist)
                                                     kicker.kickoutFromGroup(msg.to,[target])
                                                     print (msg.to,[g.mid])
@@ -2083,6 +2124,42 @@ def lineBot(op):
                     pass
             except:
                 pass
+#==============================================================================#
+                if msg.contentType == 0 and sender not in gyeMID and msg.toType == 2:
+                    if "MENTION" in list(msg.contentMetadata.keys()) != None:
+                         if settings['detectMention'] == True:
+                             contact = nadya.getContact(msg._from)
+                             cName = contact.displayName
+                             balas = ["(ข้อความออโต้) เจ้าของไลน์ไม่อยู่ครับ ติดต่อซื้อบอททักแชทมาเลยครับ กดที่ลิ้งไอดี http://line.me/ti/p/~mai06555mai"]
+                             ret_ = "" + random.choice(balas)
+                             name = re.findall(r'@(\w+)', msg.text)
+                             mention = ast.literal_eval(msg.contentMetadata["MENTION"])
+                             mentionees = mention['MENTIONEES']
+                             for mention in mentionees:
+                                   if mention['M'] in nadyaMID:
+                                          gye.sendMessage(to,ret_)
+                                          sendMessageWithMention(to,)
+                                          break
+                if msg.text in ["maitag","Maitag","แท็ค","tag","Tagall","Tag"]:
+                    gye.sendMessage(to, "แทค")
+                if msg.text in ["เปิดป้องกัน"]:
+                    gye.sendMessage(to, "pro on")
+                if msg.text in ["ปิดป้องกัน"]:
+                    gye.sendMessage(to, "pro off")
+                if msg.text in ["set","เชค","Set"]:
+                    gye.sendMessage(to, "เชคค่า")
+                if msg.text in ["เปิดแทคชื่อ"]:
+                    gye.sendMessage(to, "เปิดแทคชื่อ")
+                if msg.text in ["เปิดแทคภาพ"]:
+                    gye.sendMessage(to, "เปิดแทคภาพ")
+                if msg.text in ["เปิดอ่านแชท"]:
+                    gye.sendMessage(to, "เปิดอ่านแชท")
+                if msg.text in ["เชคห้อง"]:
+                    gye.sendMessage(to, "เชคห้อง")
+                if msg.text in ["sp","Sp","Speed","speed"]:
+                    gye.sendMessage(to, "แรงมองแทบไม่ทันเลยครับเจ้านาย")
+
+
 #==============================================================================#
         if op.type == 13:
             if op.param2 not in Bots:
