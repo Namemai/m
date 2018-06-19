@@ -1054,7 +1054,7 @@ def lineBot(op):
                             s += 7
                             txt += u'@Alin \n'
                         gye.sendMessage(to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
-                        gye.sendMessage(to, "Total {} Mention".format(str(len(nama))))          
+                        gye.sendMessage(to, "จำนวลสมาชิกในกลุ่ม {} คนครับเจ้านาย".format(str(len(nama))))          
                 elif text.lower() == 'เปิดอ่าน':
                     tz = pytz.timezone("Asia/Jakarta")
                     timeNow = datetime.now(tz=tz)
