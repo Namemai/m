@@ -22,7 +22,7 @@ pip3 install humanfriendly
 
 pip3 install googletrans
 
-git clone https://github.com/gyevha2/Gie
+git clone https://github.com/Namemai/m
 
 cd m
 
