@@ -187,16 +187,9 @@ def helpmessage():
                   "║͜͡☆➣ รีบอท " + "\n" + \
                   "║͜͡☆➣ พูด (ใส่ข้อคาม)" + "\n" + \
                   "║͜͡☆➣ เขียน (ใส่ข้อคาม)" + "\n" + \
-                  "║͜͡☆➣ ไวรัส." + "\n" + \
-                  "║͜͡☆➣ เชิญโทร" + "\n" + \
                   "║͜͡☆➣ เรา " + "\n" + \
                   "║͜͡☆➣ รายชื่อคนในห้อง " + "\n" + \
                   "║͜͡☆➣ mai " + "\n" + \
-                  "║͜͡☆➣ เตะดึง @" + "\n" + \
-                  "║͜͡☆➣ เปิดแทคชื่อ" + "\n" + \
-                  "║͜͡☆➣ ปิดแทคชื่อ" + "\n" + \
-                  "║͜͡☆➣ เปิดแทคภาพ" + "\n" + \
-                  "║͜͡☆➣ ปิดแทคภาพ" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
                   "║͜͡☆➣ Maibotline " + "\n" + \
@@ -381,20 +374,6 @@ def lineBot(op):
                     gye.sendMessage(to, str(helpTranslate))
                     gye.sendMessage(to,)
 #==============================================================================#
-                elif "เชิญโทร" in msg.text.lower():
-                    if msg.toType == 2:
-                       sep = text.split(" ")
-                       strnum = text.replace(sep[0] + " ","")
-                       num = int(strnum)
-                       gye.sendMessage(to, "เชิญโทรแล้วครับเจ้านายʕ•ᴥ•ʔ")
-                       for var in range(0,num):
-                          group = line.getGroup(to)
-                          members = [mem.mid for mem in group.members]
-                          gye.acquireGroupCallRoute(to)
-                elif "ไวรัส." == msg.text.lower():
-                    msg.contentType = 13
-                    gye.sendMessage(to,)
-                    gye.sendContact(to, "u1f41296217e740650e0448b96851a3e2")
                 elif text.lower() == 'sp':
                     start = time.time()
                     gye.sendMessage(to, "Cek Speed...")
@@ -511,18 +490,6 @@ def lineBot(op):
                             except:
                                 pass
 #-------------------------------------------------------------------------------
-                elif text.lower() == 'เปิดแทคชื่อ':
-                    settings["detectMention"] = True
-                    gye.sendMessage(to, "เปิดระบบข้อความแทคแล้วครับเจ้านายʕ•ᴥ•ʔ")
-                elif text.lower() == 'ปิดแทคชื่อ':
-                    settings["detectMention"] = False
-                    gye.sendMessage(to, "ปิดระบบข้อความแทคแล้วครับเจ้านายʕ•ᴥ•ʔ")
-                elif text.lower() == 'เปิดแทคภาพ':
-                    settings["potoMention"] = True
-                    gye.sendMessage(msg.to,"เปิดแทคส่งรูปแล้วแล้วครับเจ้านายʕ•ᴥ•ʔ")
-                elif text.lower() == 'ปิดแทคภาพ':
-                    settings["potoMention"] = False
-                    gye.sendMessage(msg.to,"ปิดแทคส่งรูปแล้วครับเจ้านายʕ•ᴥ•ʔ")
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'pt on':
                         if settings["protect"] == True:
@@ -2125,40 +2092,6 @@ def lineBot(op):
             except:
                 pass
 #==============================================================================#
-                if msg.contentType == 0 and sender not in gyeMID and msg.toType == 2:
-                    if "MENTION" in list(msg.contentMetadata.keys()) != None:
-                         if settings['detectMention'] == True:
-                             contact = nadya.getContact(msg._from)
-                             cName = contact.displayName
-                             balas = ["(ข้อความออโต้) เจ้าของไลน์ไม่อยู่ครับ ติดต่อซื้อบอททักแชทมาเลยครับ กดที่ลิ้งไอดี http://line.me/ti/p/~mai06555mai"]
-                             ret_ = "" + random.choice(balas)
-                             name = re.findall(r'@(\w+)', msg.text)
-                             mention = ast.literal_eval(msg.contentMetadata["MENTION"])
-                             mentionees = mention['MENTIONEES']
-                             for mention in mentionees:
-                                   if mention['M'] in nadyaMID:
-                                          gye.sendMessage(to,ret_)
-                                          sendMessageWithMention(to,)
-                                          break
-                if msg.text in ["maitag","Maitag","แท็ค","tag","Tagall","Tag"]:
-                    gye.sendMessage(to, "แทค")
-                if msg.text in ["เปิดป้องกัน"]:
-                    gye.sendMessage(to, "pro on")
-                if msg.text in ["ปิดป้องกัน"]:
-                    gye.sendMessage(to, "pro off")
-                if msg.text in ["set","เชค","Set"]:
-                    gye.sendMessage(to, "เชคค่า")
-                if msg.text in ["เปิดแทคชื่อ"]:
-                    gye.sendMessage(to, "เปิดแทคชื่อ")
-                if msg.text in ["เปิดแทคภาพ"]:
-                    gye.sendMessage(to, "เปิดแทคภาพ")
-                if msg.text in ["เปิดอ่านแชท"]:
-                    gye.sendMessage(to, "เปิดอ่านแชท")
-                if msg.text in ["เชคห้อง"]:
-                    gye.sendMessage(to, "เชคห้อง")
-                if msg.text in ["sp","Sp","Speed","speed"]:
-                    gye.sendMessage(to, "แรงมองแทบไม่ทันเลยครับเจ้านาย")
-
 
 #==============================================================================#
         if op.type == 13:
