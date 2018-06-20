@@ -1067,7 +1067,15 @@ def lineBot(op):
                                                     print (msg.to,[g.mid])
                                                 except:
                                                     gye.sendMessage(msg.to,"") 
-#==============================================================================#          
+#==============================================================================# 
+                elif "Say " in msg.text:
+                                bctxt = msg.text.replace("Say ","")
+                                ki1.sendText(msg.to,(bctxt))
+                                ki2.sendText(msg.to,(bctxt))
+                                ki3.sendText(msg.to,(bctxt))
+                                ki4.sendText(msg.to,(bctxt))
+
+#==============================================================================# 
                 elif text.lower() == 'แทค':
                     group = gye.getGroup(msg.to)
                     nama = [contact.mid for contact in group.members]
@@ -1214,7 +1222,7 @@ def lineBot(op):
                         pass
                     else:
                         gye.sendMessage(receiver,"Lurking has not been set.")
-                        
+#===============================================================================
 #===============================================================================[gyeMID - kiMID]
         if op.type == 19:
             print ("[ 19 ] GYEVHA BOTS KICK")
