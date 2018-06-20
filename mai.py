@@ -190,7 +190,7 @@ def helpmessage():
                   "║͜͡☆➣ เขียน (ใส่ข้อคาม)" + "\n" + \
                   "║͜͡☆➣ เรา " + "\n" + \
                   "║͜͡☆➣ รายชื่อคนในห้อง " + "\n" + \
-                  "║͜͡☆➣ mai " + "\n" + \
+                  "║͜͡☆➣ เชคบอท " + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
                   "║͜͡☆➣ Maibotline " + "\n" + \
@@ -999,7 +999,7 @@ def lineBot(op):
                         ki6.sendMessage(msg.to,"➲ Done")
                         ki6.sendMessage(msg.to,"➲ ล้างหมดแล้วครับเจ้านาย")
                         
-                elif text.lower() == 'mai':
+                elif text.lower() == 'เชคบอท':
                         gye.sendMessage(msg.to,"➲ Mai 1 มาครับเจ้านาย")
                         ais.sendMessage(msg.to,"➲ Mai 2 มาครับเจ้านาย")
                         ki2.sendMessage(msg.to,"➲ Mai 3 มาครับเจ้านาย")
