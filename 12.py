@@ -240,6 +240,7 @@ def helpmessage():
                   "║͜͡☆➣ ออก. (สั่งบอทออก) " + "\n" + \
                   "║͜͡☆➣ บาย.(ออกหมดทั้งคนทั้งบอท) " + "\n" + \
                   "║͜͡☆➣ เตะ @ (สั่งบอทเตะออก)" + "\n" + \
+                  "║͜͡☆➣ เตะดึก @ (สั่งบอทเตะ)" + "\n" + \
                   "║͜͡☆➣ คท " + "\n" + \
                   "║͜͡☆➣ Sp " + "\n" + \
                   "║͜͡☆➣ เชคค่า " + "\n" + \
@@ -249,7 +250,7 @@ def helpmessage():
                   "║͜͡☆➣ เขียน (ใส่ข้อคาม)" + "\n" + \
                   "║͜͡☆➣ เรา " + "\n" + \
                   "║͜͡☆➣ รายชื่อคนในห้อง " + "\n" + \
-                  "║͜͡☆➣ mai " + "\n" + \
+                  "║͜͡☆➣ เชคบอท " + "\n" + \
                   "╰════════╬♥" + "\n" + \
                   "╭════════╬♥" + "\n" + \
                   "║͜͡☆➣ Maibotline " + "\n" + \
@@ -732,12 +733,12 @@ def lineBot(op):
                         ki4.sendContact(to, ki4MID)
                         ki5.sendContact(to, ki5MID)
                         ki6.sendContact(to, ki6MID)
-                        ki7.sendContact(to, aisMID)
-                        ki8.sendContact(to, ki2MID)
-                        ki9.sendContact(to, ki3MID)
-                        ki10.sendContact(to, ki4MID)
-                        ki11.sendContact(to, ki5MID)
-                        ki12.sendContact(to, ki6MID)
+                        ki7.sendContact(to, ki7MID)
+                        ki8.sendContact(to, ki8MID)
+                        ki9.sendContact(to, ki9MID)
+                        ki10.sendContact(to, ki10MID)
+                        ki11.sendContact(to, ki11MID)
+                        ki12.sendContact(to, ki12MID)
                 elif text.lower() in ["ออก."]:    
                     #gye.leaveGroup(msg.to)
                     ais.leaveGroup(msg.to)
@@ -923,6 +924,9 @@ def lineBot(op):
                     except:
                         gye.sendMessage(msg.to, "Gagal restore profile")
 #==============================================================================#
+                elif "Mc " in msg.text:
+                    mmid = msg.text.replace("Mc ","")
+                    gye.sendContact(to, mmid)
                 elif msg.text.lower().startswith("เพิ่มพิมตาม "):
                     targets = []
                     key = eval(msg.contentMetadata["MENTION"])
@@ -932,10 +936,10 @@ def lineBot(op):
                     for target in targets:
                         try:
                             settings["mimic"]["target"][target] = True
-                            gye.sendMessage(msg.to,"Target ditambahkan!")
+                            gye.sendMessage(msg.to,"เพิ่มคนพิมตามแล้วครับเจ้านายʕ•ᴥ•ʔ")
                             break
                         except:
-                            gye.sendMessage(msg.to,"Added Target Fail !")
+                            nadya.sendMessage(msg.to,"เพิ่มคนพิมตามแล้วครับเจ้านายʕ•ᴥ•ʔ")
                             break
                 elif msg.text.lower().startswith("ลบพิมตาม "):
                     targets = []
