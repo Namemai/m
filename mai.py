@@ -176,10 +176,11 @@ def helpmessage():
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
                   "║͜͡☆➣ แทค (แทคทั้งห้อง)" + "\n" + \
-                  "║͜͡☆➣ เข้า. ( สั่งบอทเข้าห้อง ) " + "\n" + \
+                  "║͜͡☆➣ เข้ามา. ( สั่งบอทเข้าห้อง ) " + "\n" + \
                   "║͜͡☆➣ ออก. (สั่งบอทออก) " + "\n" + \
                   "║͜͡☆➣ บาย.(ออกหมดทั้งคนทั้งบอท) " + "\n" + \
                   "║͜͡☆➣ เตะ @ (สั่งบอทเตะออก)" + "\n" + \
+                  "║͜͡☆➣ เตะดึง @ (สั่งบอทเตะออก)" + "\n" + \
                   "║͜͡☆➣ คท " + "\n" + \
                   "║͜͡☆➣ Sp " + "\n" + \
                   "║͜͡☆➣ เชคค่า " + "\n" + \
@@ -685,7 +686,7 @@ def lineBot(op):
                     ki4.leaveGroup(msg.to)
                     ki5.leaveGroup(msg.to)
                     ki6.leaveGroup(msg.to)
-                elif text.lower() in ["เข้า."]:    
+                elif text.lower() in ["เข้ามา."]:    
                     G = gye.getGroup(msg.to)
                     ginfo = gye.getGroup(msg.to)
                     G.preventedJoinByTicket = False
@@ -1041,7 +1042,7 @@ def lineBot(op):
                            except:
                                random.choice(GUE).sendText(msg.to,"Error")
                 elif "เตะดึง " in msg.text:
-                        vkick0 = msg.text.replace("เด้ง ","")
+                        vkick0 = msg.text.replace("เตะดึง ","")
                         vkick1 = vkick0.rstrip()
                         vkick2 = vkick1.replace("@","")
                         vkick3 = vkick2.rstrip()
