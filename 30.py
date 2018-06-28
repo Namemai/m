@@ -137,10 +137,6 @@ ki21.log("Auth Token : " + str(gye.authToken))
 channelToken = ki21.getChannelResult()
 ki21.log("Channel Token : " + str(channelToken))
 
-ki22 = LINE()
-ki22.log("Auth Token : " + str(gye.authToken))
-channelToken = ki22.getChannelResult()
-ki22.log("Channel Token : " + str(channelToken))
 
 ki22 = LINE()
 ki22.log("Auth Token : " + str(gye.authToken))
@@ -281,6 +277,24 @@ ki9Settings = ki9.getSettings()
 ki10Settings = ki10.getSettings()
 ki11Settings = ki11.getSettings()
 ki12Settings = ki12.getSettings()
+ki13Settings = ki13.getSettings()
+ki14Settings = ki14.getSettings()
+ki15Settings = ki15.getSettings()
+ki16Settings = ki16.getSettings()
+ki17Settings = ki17.getSettings()
+ki18Settings = ki18.getSettings()
+ki19Settings = ki19.getSettings()
+ki20Settings = ki20.getSettings()
+ki21Settings = ki21.getSettings()
+ki22Settings = ki22.getSettings()
+ki23Settings = ki23.getSettings()
+ki24Settings = ki24.getSettings()
+ki25Settings = ki25.getSettings()
+ki26Settings = ki26.getSettings()
+ki27Settings = ki27.getSettings()
+ki28Settings = ki28.getSettings()
+ki29Settings = ki29.getSettings()
+ki30Settings = ki30.getSettings()
 
 oepoll = OEPoll(gye)
 oepoll1 = OEPoll(ais)
@@ -339,7 +353,7 @@ responsename20 = ki20.getProfile().displayName
 responsename21 = ki21.getProfile().displayName
 responsename22 = ki22.getProfile().displayName
 responsename23 = ki23.getProfile().displayName
-responsenam24 = ki24.getProfile().displayName
+responsename24 = ki24.getProfile().displayName
 responsename25 = ki25.getProfile().displayName
 responsename26 = ki26.getProfile().displayName
 responsename27 = ki27.getProfile().displayName
