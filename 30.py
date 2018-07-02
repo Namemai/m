@@ -1503,8 +1503,8 @@ def lineBot(op):
                             gs = ki28.getGroup(msg.to)
                             gs = ki29.getGroup(msg.to)
                             gs = ki30.getGroup(msg.to)
-                           gye.sendMessage(msg.to,"「 Bye All 」")
-                           gye.sendMessage(msg.to,"「 Sory guys 」")
+                           #gye.sendMessage(msg.to,"「 Bye All 」")
+                           #gye.sendMessage(msg.to,"「 Sory guys 」")
                             targets = []
                             for g in gs.members:
                                 if _name in g.displayName:
