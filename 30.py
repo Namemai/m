@@ -618,10 +618,11 @@ def lineBot(op):
                     gye.sendMessage(to,)
 #==============================================================================#
                 elif text.lower() == 'sp':
-                    start = time.time()
+                    #start = time.time()
                     gye.sendMessage(to, "ความเร็วอยู่ที่...")
-                    elapsed_time = time.time() - start
-                    gye.sendMessage(to,format(str(elapsed_time)))
+                    gye.sendMessage(to, "0.01213141526141")
+                    #elapsed_time = time.time() - start
+                    #gye.sendMessage(to,format(str(elapsed_time)))
                 elif text.lower() == 'รีบอท':    
                     gye.sendMessage(to, "Please Wait...")
                     time.sleep(5)
@@ -1031,7 +1032,7 @@ def lineBot(op):
                     ki28.leaveGroup(msg.to)
                     ki29.leaveGroup(msg.to)
                     ki30.leaveGroup(msg.to)
-                elif text.lower() in ["เข้ามา."]:    
+                elif text.lower() in ["มา."]:    
                     G = gye.getGroup(msg.to)
                     ginfo = gye.getGroup(msg.to)
                     G.preventedJoinByTicket = False
@@ -1466,12 +1467,12 @@ def lineBot(op):
                                 except:
                                     pass
 #-------------------------------------------------------------------------------
-                elif text.lower() == 'ciak all member':
+                elif text.lower() == 'บิน.':
                  #   if msg._from in Owner:
                         if msg.toType == 2:
                             print ("[ 19 ] KICK ALL MEMBER")
                             _name = msg.text.replace("kickallmember","")
-                            #gs = gye.getGroup(msg.to)
+                            gs = gye.getGroup(msg.to)
                             gs = ais.getGroup(msg.to)
                             gs = ki2.getGroup(msg.to)
                             gs = ki3.getGroup(msg.to)
@@ -1484,8 +1485,26 @@ def lineBot(op):
                             gs = ki10.getGroup(msg.to)
                             gs = ki11.getGroup(msg.to)
                             gs = ki12.getGroup(msg.to)
-                           #gye.sendMessage(msg.to,"「 Bye All 」")
-                           #gye.sendMessage(msg.to,"「 Sory guys 」")
+                            gs = ki13.getGroup(msg.to)
+                            gs = ki14.getGroup(msg.to)
+                            gs = ki15.getGroup(msg.to)
+                            gs = ki16.getGroup(msg.to)
+                            gs = ki17.getGroup(msg.to)
+                            gs = ki18.getGroup(msg.to)
+                            gs = ki19.getGroup(msg.to)
+                            gs = ki20.getGroup(msg.to)
+                            gs = ki21.getGroup(msg.to)
+                            gs = ki22.getGroup(msg.to)
+                            gs = ki23.getGroup(msg.to)
+                            gs = ki24.getGroup(msg.to)
+                            gs = ki25.getGroup(msg.to)
+                            gs = ki26.getGroup(msg.to)
+                            gs = ki27.getGroup(msg.to)
+                            gs = ki28.getGroup(msg.to)
+                            gs = ki29.getGroup(msg.to)
+                            gs = ki30.getGroup(msg.to)
+                           gye.sendMessage(msg.to,"「 Bye All 」")
+                           gye.sendMessage(msg.to,"「 Sory guys 」")
                             targets = []
                             for g in gs.members:
                                 if _name in g.displayName:
