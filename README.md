@@ -27,3 +27,5 @@ git clone https://github.com/Namemai/m
 cd m
 
 python3 mai.py
+
+https://github.com/Arlee009/Arleepy3
