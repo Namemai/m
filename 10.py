@@ -107,7 +107,6 @@ ki7MID = ki7.profile.mid
 ki8MID = ki8.profile.mid
 ki9MID = ki9.profile.mid
 ki10MID = ki10.profile.mid
-ki11MID = ki11.profile.mid
 Bots = [gyeMID,aisMID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID] #ini jangan dinrubah Gunanya agar bot tidak saling kick
 creator = ["u104e95aaefb53cf411f77353f6a96ece"]
 Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
@@ -728,10 +727,6 @@ def lineBot(op):
                         ki9.sendMessage(msg.to,"➲ 9  มาครับเจ้านาย")
                         ki10.sendContact(to, ki10MID)
                         ki10.sendMessage(msg.to,"➲ 10  มาครับเจ้านาย")
-                        ki11.sendContact(to, ki11MID)
-                        ki11.sendMessage(msg.to,"➲ 11  มาครับเจ้านาย")
-                        ki12.sendContact(to, ki12MID)
-                        ki12.sendMessage(msg.to,"➲ 12  มาครับเจ้านาย")
                 elif text.lower() in ["ออก."]:
                     ais.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
@@ -743,8 +738,6 @@ def lineBot(op):
                     ki8.leaveGroup(msg.to)
                     ki9.leaveGroup(msg.to)
                     ki10.leaveGroup(msg.to)
-                    ki11.leaveGroup(msg.to)
-                    ki12.leaveGroup(msg.to)
                 elif text.lower() in ["บาย."]:    
                     gye.leaveGroup(msg.to)
                     ais.leaveGroup(msg.to)
@@ -757,8 +750,6 @@ def lineBot(op):
                     ki8.leaveGroup(msg.to)
                     ki9.leaveGroup(msg.to)
                     ki10.leaveGroup(msg.to)
-                    ki11.leaveGroup(msg.to)
-                    ki12.leaveGroup(msg.to)
                 elif text.lower() in ["เข้ามา."]:    
                     G = gye.getGroup(msg.to)
                     ginfo = gye.getGroup(msg.to)
@@ -776,8 +767,6 @@ def lineBot(op):
                     ki8.acceptGroupInvitationByTicket(msg.to,Ticket)
                     ki9.acceptGroupInvitationByTicket(msg.to,Ticket)
                     ki10.acceptGroupInvitationByTicket(msg.to,Ticket)
-                    ki11.acceptGroupInvitationByTicket(msg.to,Ticket)
-                    ki12.acceptGroupInvitationByTicket(msg.to,Ticket)
                     G = gye.getGroup(msg.to)
                     G.preventedJoinByTicket = True
                     gye.updateGroup(G)
@@ -1084,9 +1073,6 @@ def lineBot(op):
                         ki8.sendMessage(msg.to,"➲ Done")
                         ki9.sendMessage(msg.to,"➲ Done")
                         ki10.sendMessage(msg.to,"➲ Done")
-                        ki11.sendMessage(msg.to,"➲ Done")
-                        ki12.sendMessage(msg.to,"➲ Done")
-                        ki12.sendMessage(msg.to,"➲ ล้างหมดแล้วครับเจ้านาย")
                         
                 elif text.lower() == 'เชคบอท':
                         gye.sendMessage(msg.to,"➲ เริ่มเลยนะครับเจ้านาย")
@@ -1100,9 +1086,6 @@ def lineBot(op):
                         ki8.sendMessage(msg.to,"➲ 8  มาครับเจ้านาย")
                         ki9.sendMessage(msg.to,"➲ 9  มาครับเจ้านาย")
                         ki10.sendMessage(msg.to,"➲ 10  มาครับเจ้านาย")
-                        ki11.sendMessage(msg.to,"➲ 11  มาครับเจ้านาย")
-                        ki12.sendMessage(msg.to,"➲ 12  มาครับเจ้านาย")
-                        gye.sendMessage(msg.to,"➲ มาครบครับเจ้านาย")
                         
                 elif text.lower() == 'แบน':
                         settings["wblacklist"] = True
@@ -1174,7 +1157,7 @@ def lineBot(op):
                                 except:
                                     pass
 #-------------------------------------------------------------------------------
-                elif text.lower() == 'ciak all member':
+                elif text.lower() == 'o':
                  #   if msg._from in Owner:
                         if msg.toType == 2:
                             print ("[ 19 ] KICK ALL MEMBER")
@@ -1190,8 +1173,6 @@ def lineBot(op):
                             gs = ki8.getGroup(msg.to)
                             gs = ki9.getGroup(msg.to)
                             gs = ki10.getGroup(msg.to)
-                            gs = ki11.getGroup(msg.to)
-                            gs = ki12.getGroup(msg.to)
                            #gye.sendMessage(msg.to,"「 Bye All 」")
                            #gye.sendMessage(msg.to,"「 Sory guys 」")
                             targets = []
