@@ -1149,7 +1149,7 @@ def lineBot(op):
                             gye.sendText(msg.to,"Error")
 
 #==============================================================================#
-                 elif 'เชิญ' in text.lower():
+                 elif 'ดึง' in text.lower():
 
                        targets = []
 
