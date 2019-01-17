@@ -1149,30 +1149,6 @@ def lineBot(op):
                             gye.sendText(msg.to,"Error")
 
 #==============================================================================#
-                 elif 'ดึง' in text.lower():
-
-                       targets = []
-
-                       key = eval(msg.contentMetadata["MENTION"])
-
-                       key["MENTIONEES"] [0] ["M"]
-
-                       for x in key["MENTIONEES"]:
-
-                           targets.append(x["M"])
-
-                       for target in targets:
-
-                           try:
-
-                               gye.inviteIntoGroup(msg.to,[target])
-
-                               gye.sendMessage(receiver, "Type👉 Invite Succes")
-
-                           except:
-
-                               gye.sendMessage(msg.to,"Type👉 Limit Invite")
-#==============================================================================#
 			
                    elif msg.text.lower() == 'เชิญแอด':
 
