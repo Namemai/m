@@ -1,4 +1,3 @@
-Till
 from gyevha import
 from datetime import datetime
 from time import sleep
