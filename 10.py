@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+Till# -*- coding: utf-8 -*-
 
 from gyevha import *
 from datetime import datetime
@@ -1149,62 +1149,7 @@ def lineBot(op):
                             gye.sendText(msg.to,"Error")
 
 #==============================================================================#
-			
-                   elif msg.text.lower() == 'เชิญแอด':
 
-                	if msg.toType == 2:                                           ginfo = line.getGroup(receiver)
-
-                           try:
-
-                               gcmid = ginfo.creator.mid
-
-                           except:
-
-                               gcmid = "Error"
-
-                           if settings["lang"] == "JP":
-
-                               gye.inviteIntoGroup(receiver,[gcmid])
-
-                               gye.sendMessage(receiver, "❋พิมพ์คำเชิญกลุ่ม")
-
-                           else:
-
-                               gye.inviteIntoGroup(receiver,[gcmid])
-
-                               gye.sendMessage(receiver, "❥ผู้สร้างกลุ่มอยู่ในแล้ว❋")
-#==============================================================================#
-
-                        elif cmd.startswith("ชื่อ "):
-
-                          if msg._from in admin:
-
-                            separate = msg.text.split(" ")
-
-                            string = msg.text.replace(separate[0] + " ","")
-
-                            if len(string) <= 10000000000:
-
-                                profile = gye.getProfile()
-
-                                profile.displayName = string
-
-                                gye.updateProfile(profile)
-
-                                gye.sendMessage(msg.to,"คุณได้เปลี่ยนชื่อเป็น " + string + "")
-#==============================================================================#
-
-                        elif cmd == "รูปกลุ่ม":
-
-                          if wait["selfbot"] == True:
-
-                            if msg._from in admin:
-
-                              if msg.toType == 2:
-
-                                settings["groupPicture"] = True
-
-                                gye.sendText(msg.to,"ส่งรูป.....")
 #=======================================================================================
 
                 elif "เตะดึง " in msg.text:
