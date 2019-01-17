@@ -1,4 +1,6 @@
-from gyevha import
+# -*- coding: utf-8 -*-
+
+from gyevha import *
 from datetime import datetime
 from time import sleep
 from bs4 import BeautifulSoup
