@@ -82,11 +82,6 @@ ki10.log("Auth Token : " + str(gye.authToken))
 channelToken = ki10.getChannelResult()
 ki10.log("Channel Token : " + str(channelToken))
 
-ki11 = LINE()
-ki11.log("Auth Token : " + str(gye.authToken))
-channelToken = ki11.getChannelResult()
-ki11.log("Channel Token : " + str(channelToken))
-
 
 #kalo mau login menggunakan token
 #gunakan disini hapus tanda pagarnya 
@@ -98,8 +93,8 @@ ki11.log("Channel Token : " + str(channelToken))
 #ki3 = LINE("EtDOOeYj4Rvl5PVfOEaa.ETpCu8czFapUIJQDqIA82G.tcOaI+VmHhWwMbyDL/7yXupWfdIvUJh80yWzu/UJXp8=")
 #ki4 = LINE("EtWyu42OHWKSaxPHY3yd.jTri3xzV4E2Z1xvWxjTrRq.s1oy5gbYMT2haZV7l6yzV0bp5gONcnu+bGSSJ1mbT0c=")
 
-KAC = [gye,ais,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10,ki11]
-GUE = [ais,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10,ki11] # ini jangan luh hapus peak ini fungsi Ciak alias kick
+KAC = [gye,ais,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10]
+GUE = [ais,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10] # ini jangan luh hapus peak ini fungsi Ciak alias kick
 #maksudnya agar bot sb/induk gak ikutan nge kick Mudeng ora
 gyeMID = gye.profile.mid
 aisMID = ais.profile.mid
@@ -113,7 +108,7 @@ ki8MID = ki8.profile.mid
 ki9MID = ki9.profile.mid
 ki10MID = ki10.profile.mid
 ki11MID = ki11.profile.mid
-Bots = [gyeMID,aisMID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID,ki11MID] #ini jangan dinrubah Gunanya agar bot tidak saling kick
+Bots = [gyeMID,aisMID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID] #ini jangan dinrubah Gunanya agar bot tidak saling kick
 creator = ["u104e95aaefb53cf411f77353f6a96ece"]
 Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
 admin = ["u104e95aaefb53cf411f77353f6a96ece"]
@@ -129,7 +124,6 @@ ki2Profile = ki7.getProfile()
 ki2Profile = ki8.getProfile()
 ki2Profile = ki9.getProfile()
 ki2Profile = ki10.getProfile()
-ki2Profile = ki11.getProfile()
 
 lineSettings = gye.getSettings()
 aisSettings = ais.getSettings()
@@ -142,7 +136,6 @@ ki7Settings = ki7.getSettings()
 ki8Settings = ki8.getSettings()
 ki9Settings = ki9.getSettings()
 ki10Settings = ki10.getSettings()
-ki11Settings = ki11.getSettings()
 
 oepoll = OEPoll(gye)
 oepoll1 = OEPoll(ais)
@@ -155,7 +148,6 @@ oepoll7 = OEPoll(ki7)
 oepoll8 = OEPoll(ki8)
 oepoll9 = OEPoll(ki9)
 oepoll10 = OEPoll(ki10)
-oepoll11 = OEPoll(ki11)
 
 responsename = gye.getProfile().displayName
 responsename2 = ais.getProfile().displayName
@@ -168,7 +160,6 @@ responsename3 = ki7.getProfile().displayName
 responsename3 = ki8.getProfile().displayName
 responsename3 = ki9.getProfile().displayName
 responsename3 = ki10.getProfile().displayName
-responsename3 = ki11.getProfile().displayName
 #==============================================================================#
 
 
@@ -1133,6 +1124,108 @@ def lineBot(op):
                                 num=(num+1)
                             msgs+="\n═══T E R S A N G K A═══\n\nTotal Tersangka :  %i" % len(settings["blacklist"])
                             gye.sendMessage(msg.to, msgs)
+#==============================================================================#
+
+                elif msg.text.lower().startswith("เตะ "):
+
+                    targets = []
+
+                    key = eval(msg.contentMetadata["MENTION"])
+
+                    key["MENTIONEES"][0]["M"]
+
+                    for x in key["MENTIONEES"]:
+
+                        targets.append(x["M"])
+
+                    for target in targets:
+
+                        try:
+
+                            gye.kickoutFromGroup(msg.to,[target])
+
+                        except:
+
+                            gye.sendText(msg.to,"Error")
+
+#==============================================================================#
+                 elif 'เชิญ' in text.lower():
+
+                       targets = []
+
+                       key = eval(msg.contentMetadata["MENTION"])
+
+                       key["MENTIONEES"] [0] ["M"]
+
+                       for x in key["MENTIONEES"]:
+
+                           targets.append(x["M"])
+
+                       for target in targets:
+
+                           try:
+
+                               gye.inviteIntoGroup(msg.to,[target])
+
+                               gye.sendMessage(receiver, "Type👉 Invite Succes")
+
+                           except:
+
+                               gye.sendMessage(msg.to,"Type👉 Limit Invite")
+			
+                   elif msg.text.lower() == 'เชิญแอด':
+
+                	if msg.toType == 2:                                           ginfo = line.getGroup(receiver)
+
+                           try:
+
+                               gcmid = ginfo.creator.mid
+
+                           except:
+
+                               gcmid = "Error"
+
+                           if settings["lang"] == "JP":
+
+                               gye.inviteIntoGroup(receiver,[gcmid])
+
+                               gye.sendMessage(receiver, "❋พิมพ์คำเชิญกลุ่ม")
+
+                           else:
+
+                               gye.inviteIntoGroup(receiver,[gcmid])
+
+                               gye.sendMessage(receiver, "❥ผู้สร้างกลุ่มอยู่ในแล้ว❋")
+
+                        elif cmd.startswith("ชื่อ "):
+
+                          if msg._from in admin:
+
+                            separate = msg.text.split(" ")
+
+                            string = msg.text.replace(separate[0] + " ","")
+
+                            if len(string) <= 10000000000:
+
+                                profile = gye.getProfile()
+
+                                profile.displayName = string
+
+                                gye.updateProfile(profile)
+
+                                gye.sendMessage(msg.to,"คุณได้เปลี่ยนชื่อเป็น " + string + "")
+
+                        elif cmd == "รูปกลุ่ม":
+
+                          if wait["selfbot"] == True:
+
+                            if msg._from in admin:
+
+                              if msg.toType == 2:
+
+                                settings["groupPicture"] = True
+
+                                gye.sendText(msg.to,"ส่งรูป.....")
 #=======================================================================================
 
                 elif "เตะดึง " in msg.text:
