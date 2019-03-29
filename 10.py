@@ -94,7 +94,7 @@ ki10.log("Channel Token : " + str(channelToken))
 #ki4 = LINE("EtWyu42OHWKSaxPHY3yd.jTri3xzV4E2Z1xvWxjTrRq.s1oy5gbYMT2haZV7l6yzV0bp5gONcnu+bGSSJ1mbT0c=")
 
 KAC = [gye,ais,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10]
-GUE = [ais,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10] # ini jangan luh hapus peak ini fungsi Ciak alias kick
+GUE = [gye,ais,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10] # ini jangan luh hapus peak ini fungsi Ciak alias kick
 #maksudnya agar bot sb/induk gak ikutan nge kick Mudeng ora
 gyeMID = gye.profile.mid
 aisMID = ais.profile.mid
@@ -108,9 +108,9 @@ ki8MID = ki8.profile.mid
 ki9MID = ki9.profile.mid
 ki10MID = ki10.profile.mid
 Bots = [gyeMID,aisMID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID] #ini jangan dinrubah Gunanya agar bot tidak saling kick
-creator = ["uf6dc312c5e927a81a7452eec5b26475d"]
-Owner = ["uf6dc312c5e927a81a7452eec5b26475d"]
-admin = ["uf6dc312c5e927a81a7452eec5b26475d"]
+creator = ["ud728aed7453aded718d7d9d44d7b7b45"]
+Owner = ["ud728aed7453aded718d7d9d44d7b7b45"]
+admin = ["ud728aed7453aded718d7d9d44d7b7b45"]
 
 gyeProfile = gye.getProfile()
 aisProfile = ais.getProfile()
@@ -149,16 +149,16 @@ oepoll9 = OEPoll(ki9)
 oepoll10 = OEPoll(ki10)
 
 responsename = gye.getProfile().displayName
-responsename2 = ais.getProfile().displayName
-responsename3 = ki2.getProfile().displayName
-responsename2 = ki3.getProfile().displayName
-responsename3 = ki4.getProfile().displayName
-responsename2 = ki5.getProfile().displayName
-responsename3 = ki6.getProfile().displayName
-responsename3 = ki7.getProfile().displayName
-responsename3 = ki8.getProfile().displayName
-responsename3 = ki9.getProfile().displayName
-responsename3 = ki10.getProfile().displayName
+responsename1 = ais.getProfile().displayName
+responsename2 = ki2.getProfile().displayName
+responsename3 = ki3.getProfile().displayName
+responsename4 = ki4.getProfile().displayName
+responsename5 = ki5.getProfile().displayName
+responsename6 = ki6.getProfile().displayName
+responsename7 = ki7.getProfile().displayName
+responsename8 = ki8.getProfile().displayName
+responsename9 = ki9.getProfile().displayName
+responsename10 = ki10.getProfile().displayName
 #==============================================================================#
 
 
@@ -434,7 +434,7 @@ def lineBot(op):
                 elif text.lower() == 'เรา':
                     try:
                         arr = []
-                        owner = "u104e95aaefb53cf411f77353f6a96ece"
+                        owner = "ud728aed7453aded718d7d9d44d7b7b45"
                         creator = gye.getContact(owner)
                         contact = gye.getContact(gyeMID)
                         grouplist = gye.getGroupIdsJoined()
@@ -727,7 +727,7 @@ def lineBot(op):
                         ki9.sendMessage(msg.to,"➲ 9  มาครับเจ้านาย")
                         ki10.sendContact(to, ki10MID)
                         ki10.sendMessage(msg.to,"➲ 10  มาครับเจ้านาย")
-                elif text.lower() in ["ออก."]:
+                elif text.lower() in ["ออก"]:
                     ais.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
@@ -750,7 +750,7 @@ def lineBot(op):
                     ki8.leaveGroup(msg.to)
                     ki9.leaveGroup(msg.to)
                     ki10.leaveGroup(msg.to)
-                elif text.lower() in ["เข้ามา."]:    
+                elif text.lower() in ["มา"]:    
                     G = gye.getGroup(msg.to)
                     ginfo = gye.getGroup(msg.to)
                     G.preventedJoinByTicket = False
@@ -1059,7 +1059,7 @@ def lineBot(op):
                         ret_ += "\n╚══[ Total {} Groups ]".format(str(len(groups)))
                         gye.sendMessage(to, str(ret_))
 #-------------------------------------------------------------------------------
-                elif text.lower() == 'ล้างแบน':
+                elif text.lower() == 'cb':
                         settings["blacklist"] = {}
                         gye.sendMessage(msg.to,"➲ Done")
                         ais.sendMessage(msg.to,"➲ Done")
@@ -1095,7 +1095,7 @@ def lineBot(op):
                         settings["dblacklist"] = True
                         gye.sendMessage(msg.to,"ลง Contact")
 #-------------------------------------------------------------------------------
-                elif text.lower() == 'เชคแบน':
+                elif text.lower() == 'bc':
                         if settings["blacklist"] == {}:
                             gye.sendMessage(msg.to,"Tidak Ada Banlist")
                         else:
@@ -1125,11 +1125,11 @@ def lineBot(op):
 
                         try:
 
-                            gye.kickoutFromGroup(msg.to,[target])
+                            ais.kickoutFromGroup(msg.to,[target])
 
                         except:
 
-                            gye.sendText(msg.to,"Error")
+                            ais.sendText(msg.to,"Error")
 
 #==============================================================================#
 
@@ -1364,8 +1364,6 @@ def lineBot(op):
                         ki8.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki9.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki10.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ki11.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ki12.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G = ais.getGroup(op.param1)
                         G.preventedJoinByTicket = True
                         ais.updateGroup(G)
@@ -1392,7 +1390,7 @@ def lineBot(op):
                         ki10.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki11.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki12.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        G = ki.getGroup(op.param1)
+                        G = ais.getGroup(op.param1)
                         G.preventedJoinByTicket = True
                         ais.updateGroup(G)
                         G.preventedJoinByTicket(G)
